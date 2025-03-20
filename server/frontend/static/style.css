@@ -3,6 +3,11 @@ img{
   align-self: center;
 }
 
+.contactimg{
+  height: 300px;
+  align-self: center;
+}
+
 .card{
   border: rgb(103, 102, 105) 3px solid;
   display: flex;  
@@ -123,4 +128,8 @@ img{
     border-radius:50px;
     text-align:center;
     box-shadow: 2px 2px 3px #999;  
+}
+
+.email {
+    color: #0C9;
 }
