@@ -32,9 +32,13 @@ const PostReview = () => {
       return;
     }
 
+    alert("All details added");
+
     let model_split = model.split(" ");
     let make_chosen = model_split[0];
     let model_chosen = model_split[1];
+
+    console.log("About to test jsoninput");
 
     let jsoninput = JSON.stringify({
       "name": name,
