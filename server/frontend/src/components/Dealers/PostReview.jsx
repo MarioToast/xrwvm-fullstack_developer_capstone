@@ -31,7 +31,7 @@ const PostReview = () => {
       alert("All details are mandatory")
       return;
     }
-
+    
     let model_split = model.split(" ");
     let make_chosen = model_split[0];
     let model_chosen = model_split[1];
@@ -46,6 +46,7 @@ const PostReview = () => {
       "car_model": model_chosen,
       "car_year": year,
     });
+    
 
     console.log(jsoninput);
     const res = await fetch(review_url, {
@@ -60,7 +61,6 @@ const PostReview = () => {
   if (json.status === 200) {
       window.location.href = window.location.origin+"/dealer/"+id;
   }
-
   }
   const get_dealer = async ()=>{
     const res = await fetch(dealer_url, {
