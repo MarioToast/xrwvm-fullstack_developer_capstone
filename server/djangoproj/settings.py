@@ -29,7 +29,7 @@ SECRET_KEY =\
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'https://mariokong-8000.theiadockernext-0-labs-
-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai']
+	prod-theiak8s-4-tor01.proxy.cognitiveclass.ai']
 CSRF_TRUSTED_ORIGINS = [
 	'https://mariokong-8000.theiadockernext-0-labs-
 	prod-theiak8s-4-tor01.proxy.cognitiveclass.ai']
