@@ -96,18 +96,18 @@ def get_dealer_reviews(request,dealer_id):
             response = analyze_review_sentiments(review_detail['review'])
             print(response)
             review_detail['sentiment'] = response['sentiment']
-        return JsonResponse({"status":200,"reviews":reviews})
+        return JsonResponse({"status": 200, "reviews": reviews})
     else:
-        return JsonResponse({"status":400,"message":"Bad Request"})
+        return JsonResponse({"status": 400, "message": "Bad Request"})
 
 # Create a `get_dealer_details` view to render the dealer details
 def get_dealer_details(request, dealer_id):
     if (dealer_id):
         endpoint = "/fetchDealer/"+str(dealer_id)
         dealership = get_request(endpoint)
-        return JsonResponse({"status":200,"dealer":dealership})
+        return JsonResponse({"status": 200, "dealer": dealership})
     else:
-        return JsonResponse({"status":400,"message":"Bad Request"})
+        return JsonResponse({"status": 400, "message": "Bad Request"})
 
 
 # Create a `add_review` view to submit a review
@@ -119,10 +119,10 @@ def add_review(request):
             return JsonResponse({"status": 200})
         except Exception as e:
             return JsonResponse({"status": 401,
-								 "message":"Error in posting review"})
+                                 "message":"Error in posting review"})
     else:
         return JsonResponse({"status": 403,
-							 "message": "Unauthorized"})
+                             "message": "Unauthorized"})
 
 
 def get_cars(request):
@@ -134,5 +134,5 @@ def get_cars(request):
     cars = []
     for car_model in car_models:
         cars.append({"CarModel": car_model.name,
-					 "CarMake": car_model.car_make.name})
-    return JsonResponse({"CarModels":cars})
+                     "CarMake": car_model.car_make.name})
+    return JsonResponse({"CarModels": cars})
